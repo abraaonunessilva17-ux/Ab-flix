@@ -5,13 +5,13 @@ import Image from 'next/image'; //Importa o componente de imagem do Next.js.
 
 export default function Header( ){
    return (
-    <div className="flex flex-row justify-center items-center h-20 bg-[#0c0c0f] gap-10 border border-b-3 border-gray-400">
+    <div className="flex flex-col md:flex-row justify-center items-center h-20 bg-[#0c0c0f] gap-10 border border-b-3 border-gray-400">
         <div className="flex-1">
-           <Image src="/assets/logo2.webp" width={100} height={10} alt="Logo" className="p-2 hover:bg-gray-800 rounded-3xl ml-20"/>
+           <Image src="/assets/logo2.webp" width={100} height={10} alt="Logo" className="hidden md:block p-2 hover:bg-gray-800 rounded-3xl ml-20"/>
         </div>
         
         <div className="flex gap-10">
-            <Link href={`/`} className="flex items-center  gap-3 text-gray-400 hover:text-white font-bold">
+            <Link href={`/`} className="flex items-center gap-3 text-gray-400 hover:text-white font-bold">
               <FaHome className = "text-gray-400 hover:text-white text-3xl" />
             Home
            </Link>

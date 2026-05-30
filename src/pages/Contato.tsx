@@ -34,9 +34,9 @@ export default function Contato() {
     }
 
     return(
-        <div className={`bg-gray-800 mx-auto px-4 sm:px-6 lg:px-20 py-10 flex flex-row h-130 items-center`}>
+        <div className={`bg-gray-800 mx-auto px-4 sm:px-6 lg:px-20 py-10 flex flex-col md:flex-row gap-5 h-160 md:h-140 items-center `}>
             {/*Seção da esquerda */}
-            <div className="flex flex-col flex-1 items-baseline gap-3">
+            <div className="flex flex-col flex-1 items-center md:items-baseline gap-3">
                <h1 className={`text-white text-center text-4xl font-medium`}>Contato</h1>
                <hr className="w-90 text-white border-2" />
                
@@ -57,15 +57,15 @@ export default function Contato() {
             </div>
 
             {/*Seção da direita.*/}
-            <form className="flex flex-col flex-1 gap-2" onSubmit={(e) => enviar(e) }>
-                <input type="text" value={digito} placeholder="Nome Completo" className="text-white bg-gray-400 focus:bg-gray-600 w-50 rounded-sm p-1"
+            <form className="flex flex-col itens-center md:ml-0 flex-1 gap-2 md:items:baseline w-70 md:w-100" onSubmit={(e) => enviar(e) }>
+                <input type="text" value={digito} placeholder="Nome Completo" className="text-white bg-gray-400 focus:bg-gray-600 w-full md:w-50 rounded-sm p-1"
                 onChange={(e) => ativarInputNome(e.target.value)}/>
 
-                <input type="text" value={email} placeholder="E-mail" className="text-white bg-gray-400 focus:bg-gray-600 w-50 rounded-sm p-1" onChange={(e) => ativarInputEmail(e.target.value)}/>
+                <input type="text" value={email} placeholder="E-mail" className="text-white bg-gray-400 focus:bg-gray-600 w-full md:w-50 rounded-sm p-1" onChange={(e) => ativarInputEmail(e.target.value)}/>
 
-                <textarea name="mensagem" rows={5} placeholder="Insira uma mensagem"  className="w-80 bg-gray-400 rounded-sm p-1 text-white"/>
+                <textarea name="mensagem" rows={5} placeholder="Insira uma mensagem"  className="w-full md:w-80 bg-gray-400 rounded-sm p-1 text-white"/>
 
-                <button className="bg-red-600 active:bg-red-400 w-50 p-1 rounded-xl text-white text-2xl font-bold border-3 border-white" type="submit">Enviar</button>  {envio.digito && (
+                <button className="bg-red-600 active:bg-red-400 p-1 rounded-xl text-white text-2xl font-bold border-3 border-white w-full md:w-50" type="submit">Enviar</button>  {envio.digito && (
                     <p className="text-green-500">Formulário enviado com sucesso!</p>
                 )}
                 {erro && (

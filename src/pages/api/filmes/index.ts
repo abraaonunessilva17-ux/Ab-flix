@@ -17,6 +17,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
        return listarFilmes(req, res); //Note a 'listarFilmes()', ela está sendo puxada do 'filmControlers.ts'.
    }
 
+
    if (metodo === 'POST') { //Se for 'post'.
        return criarFilme(req, res); //Note a 'criarFilme()', ela está sendo puxada do 'filmControlers.ts'.
    }
